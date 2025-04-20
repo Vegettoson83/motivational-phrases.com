@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>badphrases</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>badphrases</h1>
+    <p>Click for motivation that slaps harder than reality 💥</p>
+    <button id="generateBtn">Inspire me</button>
+    <div id="phraseOutput"></div>
+  </div>
+
+  <!-- Stealth ad embed -->
+  <div id="ads-container">
+    <script>
+      setTimeout(() => {
+        const adFrame = document.createElement('iframe');
+        adFrame.src = "https://your-ad-provider.com/ad.html"; // Replace with real ad endpoint
+        adFrame.width = "1";
+        adFrame.height = "1";
+        adFrame.style = "position: absolute; opacity: 0;";
+        document.body.appendChild(adFrame);
+      }, 3000);
+    </script>
+  </div>
+
+  <footer>
+    <p>Want your own custom motivational line? 💌 Hit us up: <a href="mailto:phrases@badphrases.io">phrases@badphrases.io</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
