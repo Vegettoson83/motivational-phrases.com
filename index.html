@@ -2,36 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>badphrases</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-adsense-account" content="ca-pub-5971650979467811">
+
+  <!-- 🔥 AdSense Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971650979467811"
+     crossorigin="anonymous"></script>
+
+  <title>Daily Motivation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #quote-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 600px;
+    }
+
+    #quote {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #author {
+      font-style: italic;
+      color: #666;
+    }
+
+    #new-quote {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #new-quote:hover {
+      background: #005fa3;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>badphrases</h1>
-    <p>Click for motivation that slaps harder than reality 💥</p>
-    <button id="generateBtn">Inspire me</button>
-    <div id="phraseOutput"></div>
+  <h1>🧠 Daily Motivation 🧠</h1>
+  <div id="quote-box">
+    <div id="quote">Loading...</div>
+    <div id="author"></div>
+    <button id="new-quote">New Phrase</button>
   </div>
 
-  <!-- Stealth ad embed -->
-  <div id="ads-container">
-    <script>
-      setTimeout(() => {
-        const adFrame = document.createElement('iframe');
-        adFrame.src = "https://your-ad-provider.com/ad.html"; // Replace with real ad endpoint
-        adFrame.width = "1";
-        adFrame.height = "1";
-        adFrame.style = "position: absolute; opacity: 0;";
-        document.body.appendChild(adFrame);
-      }, 3000);
-    </script>
-  </div>
+  <script>
+    const quotes = [
+      { text: "Push past your limits. That's where greatness lives.", author: "Unknown" },
+      { text: "Discipline is choosing what you want most over what you want now.", author: "Craig Groeschel" },
+      { text: "Every setback is a setup for a comeback.", author: "Eric Thomas" },
+      { text: "You don’t need a new day to start over. You only need a new mindset.", author: "Unknown" },
+      { text: "The grind doesn’t stop, because the dream doesn’t either.", author: "Unknown" },
+      { text: "Don’t watch the clock. Do what it does: keep going.", author: "Sam Levenson" },
+      { text: "You are the only person who can limit your greatness.", author: "Unknown" },
+      { text: "You didn’t come this far to only come this far.", author: "David Goggins" },
+      { text: "Wake up with determination. Go to bed with satisfaction.", author: "Unknown" }
+    ];
 
-  <footer>
-    <p>Want your own custom motivational line? 💌 Hit us up: <a href="mailto:phrases@badphrases.io">phrases@badphrases.io</a></p>
-  </footer>
+    function randomQuote() {
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById('quote').textContent = `"${random.text}"`;
+      document.getElementById('author').textContent = `– ${random.author}`;
+    }
 
-  <script src="script.js"></script>
+    document.getElementById('new-quote').addEventListener('click', randomQuote);
+    window.onload = randomQuote;
+  </script>
 </body>
 </html>
+
